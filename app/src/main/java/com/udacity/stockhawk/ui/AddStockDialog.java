@@ -19,7 +19,6 @@ import com.udacity.stockhawk.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
 public class AddStockDialog extends DialogFragment {
 
     @BindView(R.id.dialog_stock)
@@ -70,6 +69,5 @@ public class AddStockDialog extends DialogFragment {
         }
         dismissAllowingStateLoss();
     }
-
 
 }

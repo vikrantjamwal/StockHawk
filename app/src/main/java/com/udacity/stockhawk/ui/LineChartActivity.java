@@ -90,14 +90,12 @@ public class LineChartActivity extends Activity {
                             chart.getAxisLeft().setDrawGridLines(false);
                             chart.getAxisRight().setDrawGridLines(false);
                             chart.getAxisRight().setEnabled(false);
+                            chart.getLegend().setEnabled(false);
                             chart.invalidate();
                         }
                     });
                 }
-
             }
         });
-
     }
-
 }

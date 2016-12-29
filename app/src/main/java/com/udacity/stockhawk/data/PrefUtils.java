@@ -53,8 +53,10 @@ public final class PrefUtils {
         editor.apply();
     }
 
-    public static void addStock(Context context, String symbol) {
+    public static void addStock(final Context context, final String symbol) {
+
         editStockPref(context, symbol, true);
+
     }
 
     public static void removeStock(Context context, String symbol) {

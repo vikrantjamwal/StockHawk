@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -66,11 +67,11 @@ public class LineChartActivity extends Activity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 Stock stock = YahooFinance.get(symbol);
-                if(stock!=null){
+                if (stock != null) {
                     history = stock.getHistory(from, to, Interval.MONTHLY);
                 }
 
-                if (history!=null && history.size()!=0) {
+                if (history != null && history.size() != 0) {
                     LineChartActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -91,6 +92,10 @@ public class LineChartActivity extends Activity {
                             chart.getAxisRight().setDrawGridLines(false);
                             chart.getAxisRight().setEnabled(false);
                             chart.getLegend().setEnabled(false);
+
+                            Description description = new Description();
+                            description.setText("Past 24 months data");
+                            chart.setDescription(description);
                             chart.invalidate();
                         }
                     });
